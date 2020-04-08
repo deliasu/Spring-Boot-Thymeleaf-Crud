@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="alert alert-success">
+    <strong>Spring Boot Thymeleaf Crud</strong> - csdcodes.net
+</div>
+<div class="container">
+    <h5>Add~Edit</h5>
+    <form action="#" th:action="@{/movie/addEdit}" method="post" th:object="${movie}">
+        Title:<br/>
+        <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Title"/>
+        <br/>
+        Year:<br/>
+        <input type="text" class="form-control" id="releaseYear" th:field="*{releaseYear}" placeholder="Release year"/>
+        <br/>
+        Genres:<br/>
+        <input type="text" class="form-control" id="tags" th:field="*{tags}"  placeholder="Tags"/>
+        <br/>
+        Language:<br/>
+        <input type="text" class="form-control" id="language" th:field="*{language}" placeholder="Language"/>
+        <br/>
+        Country:<br/>
+        <input type="text" class="form-control" id="country" th:field="*{country}" placeholder="Country"/>
+        <input type="hidden" id="id" th:field="*{id}">
+        <br/>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
+</body>
+</html>
